@@ -31,7 +31,7 @@ Character string.
 \value{
 Returns a dataframe.
 }
-
+\author{
 Johan Renaudie.
 }
 
