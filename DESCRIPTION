@@ -4,7 +4,7 @@ Title: Some functions to retrieve data from the Neptune Database (Lazarus, 1994)
 Version: 1.0
 Date: 2013-07-12
 Author: Johan Renaudie
-Maintainer: johan.renaudie@mfn-berlin.de
+Maintainer: Johan Renaudie <johan.renaudie@mfn-berlin.de>
 Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms, age scales).
 License: GPL
 Depends: R (>= 2.14.2), RPostgreSQL
