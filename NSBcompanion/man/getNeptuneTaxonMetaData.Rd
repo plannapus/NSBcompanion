@@ -34,7 +34,7 @@ A dataframe containing informations from table 'neptune_taxonomy'
 Johan Renaudie.
 }
 \seealso{
-\code{\link{getNeptuneData}}, \code{\link{getNeptuneTaxonMetaData}}, \code{\lin{resolveSynonymy}}.
+\code{\link{getNeptuneData}}, \code{\link{getNeptuneTaxonMetaData}}, \code{\link{resolveSynonymy}}.
 }
 \examples{
 	n <- getNeptuneData(username="****", password="****", fossil_group="R",

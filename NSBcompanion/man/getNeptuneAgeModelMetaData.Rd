@@ -36,7 +36,7 @@ Johan Renaudie.
 }
 
 \seealso{
-\code{\link{getNeptuneData}}, \code{\link{getNeptuneTaxonMetaData}}, \code{\lin{Berg95_to_Grad04}}.
+\code{\link{getNeptuneData}}, \code{\link{getNeptuneTaxonMetaData}}, \code{\link{Berg95_to_Grad04}}.
 }
 \examples{
 	#Plotting the age-depth plot of ODP Leg 120 Site 748A.

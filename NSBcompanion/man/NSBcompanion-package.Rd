@@ -17,6 +17,7 @@ Date: \tab 2013-07-12\cr
 License: \tab GPL\cr
 }
 Start with \code{\link{getNeptuneData}} to retrieve a dataset. 
+\code{\link{getNeptuneAgeModelMetaData}} and \code{\link{getNeptuneTaxonMetaData}} will help you retrieve metadata on a site age model or on a taxon respectively. Function \code{\link{pacmanNeptune}} will help you perform a trimming of each species range to delete potential outliers, function \code{\link{Berg95_to_Grad04}} will convert the dataset to Gradstein et 2004 timescale and \code{\link{resolveSynonymy}} will resolve the synonymies using Neptune table 'neptune_taxonomy'.
 }
 \author{
 Johan Renaudie.
