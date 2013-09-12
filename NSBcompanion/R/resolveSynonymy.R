@@ -12,8 +12,16 @@ function(dataset, username="", password=""){
 	resolved_species <- dataset$species
 	resolved_genus <- dataset$genus
 	resolved_subspecies <- dataset$subspecies
+	step <- 1
 	while(sum(dataset$resolved_taxon_id%in%syndiat$taxon_id)!=0){
-		for(i in 1:nrow(syndiat)){dataset$resolved_taxon_id[dataset$resolved_taxon_id==syndiat[i,1]]<-syndiat[i,2]}
+		S <- syndiat[syndiat[,1]%in%dataset$resolved_taxon_id,]
+		n <- nrow(S)
+		for(i in 1:n){
+			dataset$resolved_taxon_id[dataset$resolved_taxon_id==S[i,1]]<-S[i,2]
+			cat("Step",step,":",i,"/",n,"\r")
+			}
+		step <- step+1
+		cat("\n")
 		}
 	cat("0 row done")
 	for(i in seq_along(dataset$resolved_taxon_id)){
