@@ -1,7 +1,7 @@
 getNeptuneTaxonMetaData <-
 function(username="", password="", fossil_group, taxon_id){
 	require(RPostgreSQL)
-	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="192.168.101.133", dbname="nsb", port="5432")
+	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="212.201.100.111", dbname="nsb", port="5432")
 	taxonomy <- dbReadTable(con, "neptune_taxonomy")
 	dbDisconnect(con)
 	if(!missing(fossil_group)){tax <- taxonomy[taxonomy$fossil_group==fossil_group,]}

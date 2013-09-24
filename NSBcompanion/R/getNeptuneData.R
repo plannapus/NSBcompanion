@@ -4,7 +4,7 @@ function(username="", password="", fossil_group,
 				genus, species, subspecies, taxon_status,
 				leg, site, hole, ocean){
 	require(RPostgreSQL)
-	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="192.168.101.133", dbname="nsb", port="5432")	
+	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="212.201.100.111", dbname="nsb", port="5432")	
 	sample_taxa <- dbReadTable(con, "neptune_sample_taxa")
 	sample <- dbReadTable(con, "neptune_sample")
 	taxonomy <- dbReadTable(con, "neptune_taxonomy")

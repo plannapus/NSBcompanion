@@ -2,7 +2,7 @@ getNeptuneAgeModelMetaData <-
 function (username="", password="", leg, site, hole){
 	if(missing(leg) & missing(site)){stop("Please provide a leg and/or a site.")}
 	require(RPostgreSQL)
-	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="192.168.101.133", dbname="nsb", port="5432")	
+	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="212.201.100.111", dbname="nsb", port="5432")	
 	agemodel <- dbReadTable(con, "neptune_age_model")
 	agemodel_history <- dbReadTable(con, "neptune_age_model_history")
 	hole_summary <- dbReadTable(con, "neptune_hole_summary")

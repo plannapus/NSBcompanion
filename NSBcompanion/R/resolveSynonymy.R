@@ -1,7 +1,7 @@
 resolveSynonymy <-
 function(dataset, username="", password=""){
 	require(RPostgreSQL)
-	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="192.168.101.133", dbname="nsb", port="5432")
+	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="212.201.100.111", dbname="nsb", port="5432")
 	taxonomy <- dbReadTable(con, "neptune_taxonomy")
 	dbDisconnect(con)
 	taxonomy <- taxonomy[,colnames(taxonomy)%in%c("taxon_id","taxon_synon_to","species","genus","subspecies")]
