@@ -12,4 +12,4 @@ Do not unzip.
 
 In R, type:
 
-install.packages("/path/to/NSBcompanion_1.0.1.tar.gz", type="source")
+    install.packages("/path/to/NSBcompanion_1.0.1.tar.gz", type="source")
