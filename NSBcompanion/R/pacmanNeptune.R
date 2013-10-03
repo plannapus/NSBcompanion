@@ -7,7 +7,7 @@ function(dataset, top, bottom){
 		nb_top <- floor(n*top/100)
 		nb_bottom <- floor(n*bottom/100)
 		if(nb_bottom>=1){sp[[i]] <- sp[[i]][-((n-nb_bottom+1):n),]}
-		if(nb_top>=1){sp[[i]] <- sp[[1]][-(1:nb_top),]}
+		if(nb_top>=1){sp[[i]] <- sp[[i]][-(1:nb_top),]}
 		}
 	res <- do.call(rbind,sp)
 	rownames(res)<-NULL
