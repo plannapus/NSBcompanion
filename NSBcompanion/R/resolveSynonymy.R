@@ -1,7 +1,11 @@
 resolveSynonymy <-
 function(dataset, username="", password=""){
 	require(RPostgreSQL)
-	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host="212.201.100.111", dbname="nsb", port="5432")
+	if(.Platform$OS.type=="unix"){
+		a <- grep("192\\.168\\.24",system("ifconfig",intern=TRUE),v=T)
+		}else{a <- grep("192\\.168\\.24",system("ipconfig",intern=TRUE),v=T)}
+	if(length(a)!=0){host <- '192.168.101.133'}else{host <- '212.201.100.111'}
+	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host=host, dbname="nsb", port="5432")
 	taxonomy <- dbReadTable(con, "neptune_taxonomy")
 	dbDisconnect(con)
 	taxonomy <- taxonomy[,colnames(taxonomy)%in%c("taxon_id","taxon_synon_to","species","genus","subspecies")]
