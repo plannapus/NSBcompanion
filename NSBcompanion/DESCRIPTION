@@ -1,8 +1,8 @@
 Package: NSBcompanion
 Type: Package
 Title: Some functions to retrieve data from the Neptune Database (Lazarus, 1994).
-Version: 1.0
-Date: 2013-07-12
+Version: 1.0.2
+Date: 2013-10-18
 Author: Johan Renaudie
 Maintainer: Johan Renaudie <johan.renaudie@mfn-berlin.de>
 Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms, age scales).
