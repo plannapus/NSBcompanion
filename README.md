@@ -13,3 +13,4 @@ Do not unzip.
 In R, type:
 
     install.packages("/path/to/NSBcompanion_1.0.3.tar.gz", type="source")
+    
