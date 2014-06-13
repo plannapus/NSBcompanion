@@ -20,13 +20,13 @@ function(username="", password="", fossil_group,
 			nept <- nept[nept$fossil_group%in%fossil_group,]
 			}
 		}
-	taxonomy <- taxonomy[,colnames(taxonomy)%in%c("taxon_id","genus","species","subspecies","taxon_status")]
+	taxonomy <- taxonomy[,colnames(taxonomy)%in%c("taxon_id","genus","genus_qualifier","species","species_qualifier","subspecies","taxon_status")]
 	nept <- merge(nept, taxonomy, by="taxon_id")
 	if(!missing(genus)){nept <- nept[toupper(nept$genus)%in%toupper(genus),]}
 	if(!missing(species)){nept <- nept[toupper(nept$species)%in%toupper(species),]}
 	if(!missing(subspecies)){nept <- nept[toupper(nept$subspecies)%in%toupper(subspecies),]}
 	if(!missing(taxon_status)){
-		if(any(taxon_status%in%c("V","S","Q","U","I","G","F","T"))){
+		if(any(taxon_status%in%c("V","S","Q","U","I","G","F","T","H","B"))){
 			nept <- nept[nept$taxon_status%in%taxon_status,]
 			}
 		}
