@@ -2,8 +2,8 @@ getNeptuneTaxonMetaData <-
 function(username="", password="", fossil_group, taxon_id){
 	require(RPostgreSQL)
 	if(.Platform$OS.type=="unix"){
-		a <- grep("192\\.168\\.24",system("ifconfig",intern=TRUE),v=T)
-		}else{a <- grep("192\\.168\\.24",system("ipconfig",intern=TRUE),v=T)}
+		a <- grep("naturkundemuseum-berlin",system("hostname",intern=TRUE),v=T)
+		}else{a <- grep("naturkundemuseum-berlin",system("ipconfig",intern=TRUE),v=T)}
 	if(length(a)!=0){host <- '192.168.101.133'}else{host <- '212.201.100.111'}
 	con <- dbConnect(dbDriver("PostgreSQL"), user=username, password=password,host=host, dbname="nsb", port="5432")
 	taxonomy <- dbReadTable(con, "neptune_taxonomy")
