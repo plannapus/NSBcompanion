@@ -28,14 +28,17 @@ function(dataset, username="", password=""){
 		cat("\n")
 		}
 	cat("0 row done")
-	for(i in seq_along(dataset$resolved_taxon_id)){
-		r <- taxonomy[taxonomy$taxon_id==dataset$resolved_taxon_id[i],]
+	d <- unique(dataset$resolved_taxon_id)
+	N <- 0
+	for(i in seq_along(d)){
+		r <- taxonomy[taxonomy$taxon_id==d[i],]
 		if(nrow(r)==1){
-			resolved_species[i] <- r$species
-			resolved_genus[i] <- r$genus
-			resolved_subspecies[i] <- r$subspecies
+			resolved_species[dataset$resolved_taxon_id==d[i]] <- r$species
+			resolved_genus[dataset$resolved_taxon_id==d[i]] <- r$genus
+			resolved_subspecies[dataset$resolved_taxon_id==d[i]] <- r$subspecies
 			}
-		cat("\r",i,"rows done",sep=" ")
+		N <- N + sum(dataset$resolved_taxon_id==d[i])
+		cat("\r",N,"rows done",sep=" ")
 		}
 	dataset$resolved_species <- resolved_species
 	dataset$resolved_genus <- resolved_genus
