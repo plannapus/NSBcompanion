@@ -22,7 +22,7 @@ A dataset retrieved from NSB database using function \code{\link{getNeptuneData}
 The function outputs a dataframe similar to the input dataset with extra columns: resolved_taxon_id, resolved_genus, resolved_species and resolved_subspecies.
 }
 \references{
-Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven, J. K., Diver, P., and Sanfilippo, A. (2015). An evaluated list of cenozic-recent radiolarian species names (poly- cystinea), based on those used in the dsdp, odp and iodp deep-sea drilling programs. Zootaxa, 3999(3):301– 333.
+Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven, J. K., Diver, P., and Sanfilippo, A. (2015). An evaluated list of cenozic-recent radiolarian species names (polycystinea), based on those used in the dsdp, odp and iodp deep-sea drilling programs. Zootaxa, 3999(3):301-333.
 
 }
 \author{

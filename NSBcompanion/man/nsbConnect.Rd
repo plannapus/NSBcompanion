@@ -18,7 +18,7 @@ Username, as character string.
 Username, as character string.
 }
   \item{intern}{
-Are you currently running this code from inside the Museum für Naturkunde network? Defaults to FALSE.
+Are you currently running this code from inside the Museum fuer Naturkunde network? Defaults to FALSE.
 }
   \item{local}{
 Are you trying to connect to a local, offline version of NSB? Defaults to FALSE.

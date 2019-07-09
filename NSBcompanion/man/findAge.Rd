@@ -18,7 +18,7 @@ findPaleocoordinates(conn, hole_id, age_ma)
 Connection object (resulting from \code{\link{nsbConnect}}).
 }
   \item{hole_id}{
-Hole name (in Leg_SiteHole format, e.~g. 120_747A), as a single character string.
+Hole name (in Leg_SiteHole format, e. g. 120_747A), as a single character string.
 }
   \item{depth_mbsf}{
 Depth in mbsf. Can be a single numeric value or a vector of numeric values.
@@ -43,7 +43,7 @@ Ages are computed by linear interpolation between tiepoints. Paleolatitude and P
 \item{paleo_longitude}{The paleolongitude computed for the given age from NSB table neptune_paleogeography, based on Seton et al. 2012 rotation model.}
 }
 \references{
-Seton, M., Mu ̈ller, R., Zahirovic, S., Gaina, C., Torsvik, T., Shephard, G., Talsma, A., Gurnis, M., Turner, M., Maus, S., and Chandler, M. (2012). Global continental and ocean basin reconstructions since 200Ma. Earth-Science Reviews, 113(3):212 – 270.
+Seton, M., Muëller, R., Zahirovic, S., Gaina, C., Torsvik, T., Shephard, G., Talsma, A., Gurnis, M., Turner, M., Maus, S., and Chandler, M. (2012). Global continental and ocean basin reconstructions since 200Ma. Earth-Science Reviews, 113(3):212-270.
 }
 \author{
 Johan Renaudie.

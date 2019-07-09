@@ -8,7 +8,9 @@ Get Neptune Data
 Retrieve a dataset from Neptune (NSB) database.
 }
 \usage{
-getNeptuneData(conn, fossil_group, age_range, lon_range, lat_range, genus, species, subspecies, taxon_status, leg, site, hole, ocean)
+getNeptuneData(conn, fossil_group, age_range, lon_range, lat_range, 
+              genus, species, subspecies, taxon_status, 
+              leg, site, hole, ocean)
 }
 
 \arguments{
@@ -22,10 +24,10 @@ Accepted values are "R" (Radiolarians), "F" (Foraminiferans), "D" (Diatoms), "DN
 Vector of two numeric values (min first then max) corresponding to the minimum and maximum age required (in Ma).
 }
   \item{lon_range}{
-Vector of two numeric values (min first then max) corresponding to the minimum and maximum longitude required (in °).
+Vector of two numeric values (min first then max) corresponding to the minimum and maximum longitude required (in degrees).
 }
   \item{lat_range}{
-Vector of two numeric values (min first then max) corresponding to the minimum and maximum latitude required (in °).
+Vector of two numeric values (min first then max) corresponding to the minimum and maximum latitude required (in degrees).
 }
   \item{genus}{
 Character string.
