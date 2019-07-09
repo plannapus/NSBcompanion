@@ -34,10 +34,13 @@ Lazarus et al. 2012 for the algorithm, Johan Renaudie for the code.
 }
 
 \examples{
-	n <- getNeptuneData(username="Renaudie", password="sarkozy-1", fossil_group="R", age_range=c(4,6), ocean="IND")
+	library(RPostgreSQL)
+    nsb <- nsbConnect("guest","arm_aber_sexy")
+    n <- getNeptuneData(nsb,fossil_group="R",age_range=c(4,6),ocean="IND")
 	nrow(n)
-	#[1] 1483
+	#[1] 1725
 	o <- pacmanNeptune(n, top=10, bottom=5)
 	nrow(o)
-	#[1] 554
+	#[1] 1550
+    dbDisconnect(nsb)
 }

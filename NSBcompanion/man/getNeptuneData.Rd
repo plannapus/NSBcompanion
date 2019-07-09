@@ -8,18 +8,15 @@ Get Neptune Data
 Retrieve a dataset from Neptune (NSB) database.
 }
 \usage{
-getNeptuneData(username = "", password = "", fossil_group, age_range, lon_range, lat_range, genus, species, subspecies, taxon_status, leg, site, hole, ocean)
+getNeptuneData(conn, fossil_group, age_range, lon_range, lat_range, genus, species, subspecies, taxon_status, leg, site, hole, ocean)
 }
 
 \arguments{
-  \item{username}{
-Enter here your username to NSB as a character string. Compulsory.
-}
-  \item{password}{
-Enter here your password to NSB as a character string. Compulsory.
+  \item{conn}{
+Connection object (resulting from \code{\link{nsbConnect}}).
 }
   \item{fossil_group}{
-Accepted values are "R" (Radiolarians), "F" (Foraminiferans), "D" (Diatoms) and "N" (Nanofossils), or any combinations of them.
+Accepted values are "R" (Radiolarians), "F" (Foraminiferans), "D" (Diatoms), "DN" (Dinoflagellates) and "N" (Nanofossils), or any combinations of them.
 }
   \item{age_range}{
 Vector of two numeric values (min first then max) corresponding to the minimum and maximum age required (in Ma).
@@ -52,7 +49,7 @@ Character string.
 Character string.
 }
   \item{ocean}{
-Accepted values are "ANT" (Antarctic), "ATL" (Atlantic), "PAC" (Pacific) and "IND" (Indian), or any combinations of them.
+Accepted values are "ANT" (Antarctic), "ATL" (Atlantic), "PAC" (Pacific), "MED" (Mediterrannean) and "IND" (Indian), or any combinations of them.
 }
 }
 
@@ -65,14 +62,12 @@ Johan Renaudie
 }
 
 \examples{
-	# Replace **** with your correct identifiers.
+  library(RPostgreSQL)
+  nsb <- nsbConnect("guest","arm_aber_sexy")
 	# Search for all Neogene radiolarian occurrence in the Indian sector of the Southern Ocean:
-	n <- getNeptuneData(username="****", password="****", fossil_group="R",
-						age_range=c(0,23), lon_range=c(20,120), lat_range=c(-90,-40))
+	n <- getNeptuneData(nsb, fossil_group="R",age_range=c(0,23), lon_range=c(20,120), lat_range=c(-90,-40))
 	# Search for all radiolarian and diatom occurrence concerning open-nomenclature taxa in the Atlantic and the Pacific Oceans:
-	m <- getNeptuneData(username="****", password="****", fossil_group=c("R","D"),
-						taxon_status="G", ocean=c("ATL", "PAC"))
+	m <- getNeptuneData(nsb, fossil_group=c("R","D"),taxon_status="G", ocean=c("ATL", "PAC"))
 	# Search for all occurrences of the radiolarian species \italic{Cycladophora davisiana}:
-	p <- getNeptuneData(username="****", password="****", fossil_group="R",
-						genus="Cycladophora", species="davisiana")
+	p <- getNeptuneData(nsb, fossil_group="R",genus="Cycladophora", species="davisiana")
 }

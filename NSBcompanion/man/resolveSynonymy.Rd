@@ -1,40 +1,47 @@
 \name{resolveSynonymy}
 \alias{resolveSynonymy}
+%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Resolve Synonymies.
+Resolve synonymy.
 }
 \description{
-Resolve synonymies using table \code{neptune_taxonomy}. The synonymies in this table correspond to an expert consensus (TNL).
+Resolve the synonymies using the result of the IODP Paleontology Coordination Group's TNL project (see Lazarus et al. 2015).
 }
 \usage{
-resolveSynonymy(dataset, username = "", password = "")
+resolveSynonymy(conn, dataset)
 }
-
 \arguments{
+  \item{conn}{
+Connection object (resulting from \code{\link{nsbConnect}}).
+}
   \item{dataset}{
-A dataframe imported using \code{\link{getNeptuneData}}.
+A dataset retrieved from NSB database using function \code{\link{getNeptuneData}}.
 }
-  \item{username}{
-Enter here your username to NSB as a character string. Compulsory.
-}
-  \item{password}{
-Enter here your password to NSB as a character string. Compulsory.
-}
-}
-\details{
-The function use recursion to resolve long synonym paths (spA synonym to spB, spB synonym to spC,...) and is hence rather slow. The resulting "resolved" taxa do not always have a taxon status "V", they can be "G", "U" and "Q" as well.
 }
 \value{
-Result in a dataframe similar to the input, with 4 extra columns: resolved_taxon_id, resolved_species, resolved_genus, resolved_subspecies. If the taxon was originally not a synonym thos columns contain the original taxon.
+The function outputs a dataframe similar to the input dataset with extra columns: resolved_taxon_id, resolved_genus, resolved_species and resolved_subspecies.
+}
+\references{
+Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven, J. K., Diver, P., and Sanfilippo, A. (2015). An evaluated list of cenozic-recent radiolarian species names (poly- cystinea), based on those used in the dsdp, odp and iodp deep-sea drilling programs. Zootaxa, 3999(3):301– 333.
+
 }
 \author{
 Johan Renaudie.
 }
-
-\seealso{
-\code{\link{getNeptuneData}}
-}
 \examples{
-n <- getNeptuneData(username="****", password="****", fossil_group="R", age_range=c(4,6), ocean="IND")
-m <- resolveSynonymy(m, username="****", password="****")
+library(RPostgreSQL)
+nsb <- nsbConnect("guest","arm_aber_sexy")
+data <- getNeptuneData(nsb,fossil_group="R",age_range=0:1)
+res <- resolveSynonymy(nsb, data)
+# Step 1 : 118 / 118
+# Step 2 : 12 / 12
+#  7517 rows done
+length(unique(res$taxon_id))
+#[1] 386
+length(unique(res$resolved_taxon_id))
+#[1] 299
+dbDisconnect(nsb)
 }
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{taxonomy}
