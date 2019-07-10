@@ -1,2 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 importFrom("stats", "approx")
+import(RPostgreSQL)
+import(DBI)

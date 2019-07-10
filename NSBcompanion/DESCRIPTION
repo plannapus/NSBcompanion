@@ -7,4 +7,5 @@ Author: Johan Renaudie
 Maintainer: Johan Renaudie <johan.renaudie@mfn-berlin.de>
 Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms).
 License: MIT
-Imports: RPostgreSQL, stats
+Depends: RPostgreSQL
+Imports: RPostgreSQL, stats, DBI
