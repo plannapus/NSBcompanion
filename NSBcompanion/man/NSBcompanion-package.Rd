@@ -12,8 +12,8 @@ Some basic functions to retrieve data from Neptune, and a couple of other functi
 \tabular{ll}{
 Package: \tab NSBcompanion\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
-Date: \tab 2019-07-09\cr
+Version: \tab 2.1\cr
+Date: \tab 2019-07-11\cr
 License: \tab MIT\cr
 }
 Start with \code{\link{getNeptuneData}} to retrieve a dataset.
