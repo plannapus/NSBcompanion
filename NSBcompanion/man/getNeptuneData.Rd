@@ -8,9 +8,10 @@ Get Neptune Data
 Retrieve a dataset from Neptune (NSB) database.
 }
 \usage{
-getNeptuneData(conn, fossil_group, age_range, lon_range, lat_range, 
-              genus, species, subspecies, taxon_status, 
-              leg, site, hole, ocean)
+getNeptuneData(conn, fossil_group, genus, species,
+               age_range, lon_range, lat_range, leg, site, hole, ocean,
+               resolve_syn=FALSE, filter_qi=TRUE, filter_on=TRUE, filter_rw=TRUE,
+               filter_aq=FALSE, pacman, agescale="Grad12")
 }
 
 \arguments{
@@ -35,17 +36,11 @@ Character string.
   \item{species}{
 Character string.
 }
-  \item{subspecies}{
-Character string.
-}
-  \item{taxon_status}{
-Accepted values are "V" (Valid), "S" (Synonym), "G" (open-nomenclature), "Q" (Questionable), "U" (Uncertain), "F" (Freshwater, diatoms only), "I" (Invalid, i. e. doesn't belong to the group), or any combinations of them.
-}
   \item{leg}{
 Character string.
 }
   \item{site}{
-Character string.
+Integer.
 }
   \item{hole}{
 Character string.
@@ -53,10 +48,32 @@ Character string.
   \item{ocean}{
 Accepted values are "ANT" (Antarctic), "ATL" (Atlantic), "PAC" (Pacific), "MED" (Mediterrannean) and "IND" (Indian), or any combinations of them.
 }
+  \item{resolve_syn}{
+  Logical. Resolve taxonomy using TNL. Defaults to FALSE.
+}
+  \item{filter_qi}{
+  Logical. Filter out questionable identifications and taxa invalidly included in the fossil group. Defaults to TRUE.
+}
+  \item{filter_on}{
+  Logical. Filter out open-nomenclature taxa.Defaults to TRUE.
+}
+  \item{filter_rw}{
+  Logical. Filter out problematic samples/occurrences (reworking, ...). Defaults to TRUE.
+}
+  \item{filter_aq}{
+  Filter out sites with age quality. Defaults to FALSE. If not FALSE, set minimum quality for an age model: can be one of 'VP','P','M','G','VG','E'.
+}
+  \item{pacman}{
+  Perform pacman trimming. Numeric value (used for both top and bottom) or vector of 2 numeric values (top and bottom). Leave blank for no trimming.
+}
+  \item{agescale}{
+  Character string. Which age scale to use. Defaults to 'Grad12' (i. e. Gradstein et al. 2012 GPTS). Could be one of 'Berg85', 'CK95', 'Grad08' and 'Grad12'.
+}
+
 }
 
 \value{
-A dataframe corresponding to a subset of tables 'neptune_sample', 'neptune_sample_taxa', 'neptune_taxonomy', 'neptune_hole_summary' from NSB.
+A dataframe downloaded from NSB, similar to one that can be downloaded from the NSB website.
 }
 
 \author{
@@ -64,12 +81,10 @@ Johan Renaudie
 }
 
 \examples{
-  library(RPostgreSQL)
-  nsb <- nsbConnect("guest","arm_aber_sexy")
-	# Search for all Neogene radiolarian occurrence in the Indian sector of the Southern Ocean:
-	n <- getNeptuneData(nsb, fossil_group="R",age_range=c(0,23), lon_range=c(20,120), lat_range=c(-90,-40))
-	# Search for all radiolarian and diatom occurrence concerning open-nomenclature taxa in the Atlantic and the Pacific Oceans:
-	m <- getNeptuneData(nsb, fossil_group=c("R","D"),taxon_status="G", ocean=c("ATL", "PAC"))
-	# Search for all occurrences of the radiolarian species \italic{Cycladophora davisiana}:
-	p <- getNeptuneData(nsb, fossil_group="R",genus="Cycladophora", species="davisiana")
+nsb <- nsbConnect("guest","arm_aber_sexy")
+# Search for all Neogene siliceous microfossil occurrence in the Indian sector of the Southern Ocean:
+n <- getNeptuneData(nsb, fossil_group=c("R","D"),age_range=c(0,23), lon_range=c(20,120), lat_range=c(-90,-40))
+
+# Search for all occurrences of the radiolarian species Cycladophora davisiana:
+p <- getNeptuneData(nsb, fossil_group="R",genus="Cycladophora", species="davisiana")
 }

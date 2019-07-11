@@ -28,7 +28,3 @@ Lazarus, D. B. 1994. Neptune: A marine Micropaleontology Database. Mathematical 
 }
 
 \keyword{ package }
-
-\examples{
-
-}

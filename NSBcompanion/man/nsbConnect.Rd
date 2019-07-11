@@ -24,26 +24,11 @@ Are you currently running this code from inside the Museum fuer Naturkunde netwo
 Are you trying to connect to a local, offline version of NSB? Defaults to FALSE.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A connection object.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Johan Renaudie.
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 nsb <- nsbConnect("guest","arm_aber_sexy")

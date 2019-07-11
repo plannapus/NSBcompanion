@@ -3,10 +3,10 @@
 \alias{findPaleocoordinates}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Find a sample age and paleocoordinates based on its depth.
+Age and paleocoordinates of a sample.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Find a sample age and paleocoordinates based on its depth.
 }
 \usage{
 findAge(conn, hole_id, depth_mbsf)
@@ -48,17 +48,7 @@ Seton, M., Mueller, R., Zahirovic, S., Gaina, C., Torsvik, T., Shephard, G., Tal
 \author{
 Johan Renaudie.
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-library(RPostgreSQL)
 nsb <- nsbConnect("guest","arm_aber_sexy")
 ages <- findAge(nsb, "74_525A",seq(0,700,100))
 findPaleocoordinates(nsb,"74_525A",ages$age_ma)

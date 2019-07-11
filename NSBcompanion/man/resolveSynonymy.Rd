@@ -17,6 +17,9 @@ Connection object (resulting from \code{\link{nsbConnect}}).
   \item{dataset}{
 A dataset retrieved from NSB database using function \code{\link{getNeptuneData}}.
 }
+  \item{verbose}{
+Logical. If TRUE print a progress bar.
+}
 }
 \value{
 The function outputs a dataframe similar to the input dataset with extra columns: resolved_taxon_id, resolved_genus, resolved_species and resolved_subspecies.
@@ -29,7 +32,6 @@ Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven,
 Johan Renaudie.
 }
 \examples{
-library(RPostgreSQL)
 nsb <- nsbConnect("guest","arm_aber_sexy")
 data <- getNeptuneData(nsb,fossil_group="R",age_range=0:1)
 res <- resolveSynonymy(nsb, data)

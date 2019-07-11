@@ -24,7 +24,6 @@ Write a tab-delimited file in the current directory.
 Johan Renaudie.
 }
 \examples{
-library(RPostgreSQL)
 nsb <- nsbConnect("guest","arm_aber_sexy")
 makeCoreFile(nsb,"747A")
 dbDisconnect(nsb)
