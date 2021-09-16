@@ -1,12 +1,12 @@
 Package: NSBcompanion
 Type: Package
 Title: Functions to retrieve and manipulate data from the Neptune Database (Lazarus, 1994)
-Version: 2.1
-Date: 2019-07-11
+Version: 2.2
+Date: 2021-09-16
 Author: Johan Renaudie
 Maintainer: Johan Renaudie <johan.renaudie@mfn.berlin>
 Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms). Basically mimic main functionalities of http://nsb-mfn-berlin.de.
 License: MIT
 URL: http://github.com/plannapus/NSB/NSBcompanion
-Depends: RPostgreSQL
-Imports: RPostgreSQL, stats, DBI
+Depends: RPostgres
+Imports: RPostgres, stats, DBI

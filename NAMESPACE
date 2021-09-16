@@ -1,4 +1,4 @@
 exportPattern("^[^.].+")
 importFrom("stats", "approx")
-import(RPostgreSQL)
+import(RPostgres)
 import(DBI)
