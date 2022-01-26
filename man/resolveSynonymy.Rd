@@ -25,7 +25,7 @@ Logical. If TRUE print a progress bar.
 The function outputs a dataframe similar to the input dataset with extra columns: resolved_taxon_id, resolved_genus, resolved_species and resolved_subspecies.
 }
 \references{
-Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven, J. K., Diver, P., and Sanfilippo, A. (2015). An evaluated list of cenozic-recent radiolarian species names (polycystinea), based on those used in the dsdp, odp and iodp deep-sea drilling programs. Zootaxa, 3999(3):301-333.
+Lazarus, D., Suzuki, N., Caulet, J.-P., Nigrini, C., Goll, I., Goll, R., Dolven, J. K., Diver, P., and Sanfilippo, A. (2015). An evaluated list of Cenozic-recent radiolarian species names (Polycystinea), based on those used in the DSDP, ODP and IODP deep-sea drilling programs. Zootaxa, 3999(3):301-333.
 
 }
 \author{
