@@ -12,3 +12,20 @@ function(conn, hole_id, depth_mbsf){
   }else{age <- rep(NA, length(depth_mbsf))}
   data.frame('hole_id'=hole_id,'depth_mbsf'=depth_mbsf,'age_ma'=age)
 }
+
+#Version using api
+findAge2 <- 
+function(site_hole,depth_mbsf,intern=FALSE){
+  library(rjson)
+  host <- ifelse(intern, "192.168.101.168", "nsb.mfn-berlin.de")
+  api <- sprintf("http://%s/api/agemodel/%s/%s",host,site_hole,paste(depth_mbsf,collapse=","))
+  js <- fromJSON(readLines(api,warn=FALSE))
+  s <- sapply(js$age_ma,length)
+  js$age_ma[s==0] <- NA
+  js$age_ma <- unlist(js$age_ma)
+  if(js$status==200){
+    return(data.frame('site_hole'=site_hole,'depth_mbsf'=js$depth_mbsf,'age_ma'=js$age_ma))
+  }else{
+    stop(js$message)
+  }
+}
