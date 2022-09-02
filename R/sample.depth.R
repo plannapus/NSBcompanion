@@ -50,7 +50,7 @@ sample.depth <- function(conn, samples, intervalsep="/"){
       if(b$sect[j]=="CC"){
         n <- cshc$core_top_mbsf+cshc$core_length
       }else{
-        n <- cshc$core_top_mbsf+1.5*b$sect[j]
+        n <- cshc$core_top_mbsf+1.5*as.integer(b$sect[j])
       }
       if(is.na(b$top[j]) & b$sect[j]=="CC"){top <- 0}else{top <- b$top[j]}
       if(length(n)) mbsf[j] <- n + top/100
