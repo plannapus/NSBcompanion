@@ -1,4 +1,4 @@
-sample.depth <- function(conn, samples, intervalsep="/"){
+sampleDepth <- function(conn, samples, intervalsep="/"){
   all_cores <- dbReadTable(conn,"neptune_core")
   nhs <- dbReadTable(conn,"neptune_hole_summary")
   all_cores <- merge(all_cores,nhs)
