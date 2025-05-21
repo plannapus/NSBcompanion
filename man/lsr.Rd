@@ -39,7 +39,7 @@ NA will be returned for depths out of the age model range.
 \code{\link{findAge}}
 }
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
 lsr(nsb,"71_511")
 #     hole    from      to       lsr
 # 1 71_511   3.792 114.407 9.6892078
@@ -54,3 +54,4 @@ lsr(nsb,"71_511",150)
 lsr(nsb,"71_511",515)
 # [1] NA
 dbDisconnect(nsb)
+}

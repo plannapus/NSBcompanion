@@ -24,7 +24,7 @@ Write a tab-delimited file in the current directory.
 Johan Renaudie.
 }
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
 makeCoreFile(nsb,"747A")
 dbDisconnect(nsb)
 }

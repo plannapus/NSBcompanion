@@ -67,7 +67,7 @@ Accepted values are "ANT" (Antarctic), "ATL" (Atlantic), "PAC" (Pacific), "MED" 
   Perform pacman trimming. Numeric value (used for both top and bottom) or vector of 2 numeric values (top and bottom). Leave blank for no trimming.
 }
   \item{agescale}{
-  Character string. Which age scale to use. Defaults to 'Grad12' (i. e. Gradstein et al. 2012 GPTS). Could be one of 'Berg85', 'CK95', 'Grad08' and 'Grad12'.
+  Character string. Which age scale to use. Defaults to 'Grad12' (i. e. Gradstein et al. 2012 GPTS). Could be one of 'Berg85', 'CK95', 'Grad08', 'Grad12' and 'GTS2020'.
 }
 
 }
@@ -81,7 +81,7 @@ Johan Renaudie
 }
 
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
 # Search for all Neogene siliceous microfossil occurrence in the Indian sector of the Southern Ocean:
 n <- getNeptuneData(nsb, fossil_group=c("R","D"),age_range=c(0,23), lon_range=c(20,120), lat_range=c(-90,-40))
 

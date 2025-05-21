@@ -12,8 +12,8 @@ Some basic functions to retrieve data from Neptune, and a couple of other functi
 \tabular{ll}{
 Package: \tab NSBcompanion\cr
 Type: \tab Package\cr
-Version: \tab 2.1\cr
-Date: \tab 2019-07-11\cr
+Version: \tab 3.0\cr
+Date: \tab 2025-05-21\cr
 License: \tab MIT\cr
 }
 Start with \code{\link{getNeptuneData}} to retrieve a dataset.
@@ -25,6 +25,8 @@ Johan Renaudie.
 }
 \references{
 Lazarus, D. B. 1994. Neptune: A marine Micropaleontology Database. Mathematical Geology, 26(7): 817-832.
+
+Renaudie J., Lazarus D.B., Diver P. 2020. NSB (Neptune Sandbox Berlin): An expanded and improved database of marine planktonic microfossil data and deep-sea stratigraphy.. Palaeontologia Electronica, 23(2):a11.
 }
 
 \keyword{ package }

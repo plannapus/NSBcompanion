@@ -49,7 +49,7 @@ Seton, M., Mueller, R., Zahirovic, S., Gaina, C., Torsvik, T., Shephard, G., Tal
 Johan Renaudie.
 }
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
 ages <- findAge(nsb, "74_525A",seq(0,700,100))
 findPaleocoordinates(nsb,"74_525A",ages$age_ma)
 #   hole_id    age_ma paleo_latitude paleo_longitude

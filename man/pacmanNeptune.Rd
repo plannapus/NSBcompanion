@@ -34,7 +34,7 @@ Lazarus et al. 2012 for the algorithm, Johan Renaudie for the code.
 }
 
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
 n <- getNeptuneData(nsb,fossil_group="R",age_range=c(4,6),ocean="IND")
 nrow(n)
 #[1] 1725

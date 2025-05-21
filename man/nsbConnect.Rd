@@ -5,23 +5,14 @@
 Connect to NSB.
 }
 \description{
-Wrapper to connect to NSB database.
+Wrapper to connect to an archive of the NSB database.
 }
 \usage{
-nsbConnect(username, password, intern = FALSE, local = FALSE)
+nsbConnect(...)
 }
 \arguments{
-  \item{username}{
-Username, as character string.
-}
-  \item{password}{
-Username, as character string.
-}
-  \item{intern}{
-Are you currently running this code from inside the Museum fuer Naturkunde network? Defaults to FALSE.
-}
-  \item{local}{
-Are you trying to connect to a local, offline version of NSB? Defaults to FALSE.
+  \item{...}{
+Argument to be passed to chronosphere's `fetch`, namely a date corresponding to the timestamp of the desired version of the database. Default to the most recent version of the database.
 }
 }
 \value{
@@ -31,5 +22,6 @@ A connection object.
 Johan Renaudie.
 }
 \examples{
-nsb <- nsbConnect("guest","arm_aber_sexy")
+nsb <- nsbConnect()
+nsb2016 <- nsbConnect(ver="2016-02-29")
 }
