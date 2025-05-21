@@ -4,7 +4,7 @@ Title: Functions to retrieve and manipulate data from the Neptune Database (Laza
 Version: 3.0
 Date: 2025-05-21
 Author: Johan Renaudie
-Maintainer: Johan Renaudie <johan.renaudie@mfn.berlin>
+Maintainer: Johan Renaudie <lecoryphee@googlemail.com>
 Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms). Basically mimic main functionalities of the defunct website http://nsb-mfn-berlin.de.
 License: MIT
 URL: http://github.com/plannapus/NSBcompanion
