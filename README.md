@@ -1,7 +1,7 @@
 NSBcompanion
 ============
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5511908.svg)](https://doi.org/10.5281/zenodo.5511908)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3408197.svg)](https://doi.org/10.5281/zenodo.3408197)
 
 A minimal R package to retrieve data from Neptune Database
 
