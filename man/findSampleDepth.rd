@@ -1,5 +1,5 @@
-\name{sampleDepth}
-\alias{sampleDepth}
+\name{findSampleDepth}
+\alias{findSampleDepth}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Get depth of sample based on its name.
@@ -8,7 +8,7 @@ Get depth of sample based on its name.
 Get depth of sample based on its name.
 }
 \usage{
-sampleDepth(conn, samples, intervalsep="/")
+findSampleDepth(conn, samples, intervalsep="/")
 }
 \arguments{
   \item{conn}{
@@ -29,5 +29,5 @@ Johan Renaudie.
 }
 \examples{
 nsb <- nsbConnect()
-sampleDepth(nsb,c("744A-1-1,10","744A-10-6,10","744A-5-CC"))
+findSampleDepth(nsb,c("744A-1-1,10","744A-10-6,10","744A-5-CC"))
 }
