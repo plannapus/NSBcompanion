@@ -1,4 +1,4 @@
-lsr <- function(con, hole_id, depth_mbsf){
+findLSR <- function(con, hole_id, depth_mbsf){
   NAM <- dbGetQuery(con,"SELECT a.hole_id, b.revision_no, c.age_quality, b.depth_mbsf, b.age_ma 
                          FROM neptune_hole_summary as a, neptune_age_model as b, neptune_age_model_history as c
                          WHERE a.site_hole=b.site_hole 

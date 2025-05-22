@@ -12,5 +12,5 @@ A minimal R package to retrieve data from Neptune Database
 
 Alternatively:
 
-    download.file("https://github.com/plannapus/NSBcompanion/releases/download/v3.0/NSBcompanion_3.0.tar.gz","NSBcompanion_3.0.tar.gz")
-    install.packages("NSBcompanion_3.0.tar.gz",repos=NULL,type="source")
+    download.file("https://github.com/plannapus/NSBcompanion/releases/download/v3.1/NSBcompanion_3.1.tar.gz","NSBcompanion_3.1.tar.gz")
+    install.packages("NSBcompanion_3.1.tar.gz",repos=NULL,type="source")

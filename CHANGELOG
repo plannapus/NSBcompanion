@@ -1,3 +1,8 @@
+## Version 3.1
+ * Corrected mistakes introduced in 3.0
+ * Added function `getAgeModel`.
+ * Harmonized function names (`findSampleDepth` and `findLSR`)
+
 ## Version 3.0
  * Changed `nsbConnect` to use the Zenodo archive as the website and server are defunct.
  * Added functions `lsr`, `getStratData` and `sample.depth`.

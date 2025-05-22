@@ -1,11 +1,11 @@
 Package: NSBcompanion
 Type: Package
-Title: Functions to retrieve and manipulate data from the Neptune Database (Lazarus, 1994)
-Version: 3.0
-Date: 2025-05-21
+Title: Functions to retrieve and manipulate data from the Neptune Database
+Version: 3.1
+Date: 2025-05-22
 Author: Johan Renaudie
 Maintainer: Johan Renaudie <lecoryphee@googlemail.com>
-Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms). Basically mimic main functionalities of the defunct website http://nsb-mfn-berlin.de.
+Description: Some basic functions to retrieve data from Neptune, and a couple of other functions to deal with the preliminary quality control (outliers, synonyms). Basically mimic main functionalities of the defunct website http://nsb.mfn-berlin.de.
 License: MIT
 URL: http://github.com/plannapus/NSBcompanion
 Depends: chronosphere

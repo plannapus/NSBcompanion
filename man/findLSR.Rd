@@ -1,5 +1,5 @@
-\name{lsr}
-\alias{lsr}
+\name{findLSR}
+\alias{findLSR}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Linear Sedimentation Rate
@@ -8,7 +8,7 @@ Linear Sedimentation Rate
 This function computes the linear sedimentation rate of given samples or along a given hole, according to the age model currently used in NSB for that hole.
 }
 \usage{
-lsr(con, hole_id, depth_mbsf)
+findLSR(con, hole_id, depth_mbsf)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -40,7 +40,7 @@ NA will be returned for depths out of the age model range.
 }
 \examples{
 nsb <- nsbConnect()
-lsr(nsb,"71_511")
+findLSR(nsb,"71_511")
 #     hole    from      to       lsr
 # 1 71_511   3.792 114.407 9.6892078
 # 2 71_511 114.407 141.108 3.4236309
@@ -49,9 +49,9 @@ lsr(nsb,"71_511")
 # 6 71_511 194.367 385.500 2.3777188
 # 7 71_511 385.500 451.500 0.2477160
 # 8 71_511 451.500 512.550 0.4558877
-lsr(nsb,"71_511",150)
+findLSR(nsb,"71_511",150)
 # [1] 1.299099
-lsr(nsb,"71_511",515)
+findLSR(nsb,"71_511",515)
 # [1] NA
 dbDisconnect(nsb)
 }

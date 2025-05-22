@@ -6,6 +6,6 @@ authors:
     orcid: https://orcid.org/0000-0002-9107-1984
 title: "NSBcompanion: Functions to retrieve and manipulate data from the Neptune
 Database"
-version: 3.0
+version: 3.1
 doi: 10.5281/zenodo.3408197
 date-released: 2025-05-21
